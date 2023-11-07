@@ -1,0 +1,162 @@
+/* css Resetting */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+figure,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol,
+ul {
+  margin: 0;
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+/*global*/
+:root {
+  --color-primary: #a52a2a;
+  --color-accent-1: #008000;
+  --color-text-1: #262424;
+  --color-text-2: #f1ecec;
+  --color-background: #ffd700;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: "VT323", monospace;
+}
+
+/* main */
+.wrapper {
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+.head {
+  width: 60vw;
+  max-width: 600px;
+  font-size: 2.3rem;
+  padding: 0 19px;
+  text-align: center;
+  color: var(--color-accent-1);
+  border-left: solid 5px var(--color-primary);
+  border-right: solid 5px var(--color-primary);
+}
+
+.game-box {
+  width: 80vw;
+  height: 80vw;
+  max-width: 800px;
+  max-height: 800px;
+  display: grid;
+
+  justify-content: center;
+  align-items: center;
+  border: solid 5px var(--color-primary);
+  border-radius: 10px;
+}
+.game-box_inner-grid-box {
+  background-color: #262424c1;
+  width: 77vw;
+  height: 77vw;
+  max-width: 770px;
+  max-height: 770px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.line {
+  width: 5px;
+  height: 50px;
+  background-color: var(--color-primary);
+}
+
+.continer-num {
+  width: 80vw;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border: solid 5px var(--color-primary);
+  border-radius: 10px;
+  padding: 10px 5px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.num-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text-2);
+  font-size: 1.2rem;
+  border-radius: 100%;
+  box-shadow: 5px 5px 2px 0.5px rgb(64, 65, 66);
+  background-color: var(--color-accent-1);
+  border: groove 5px var(--color-primary);
+  justify-self: center;
+  align-self: center;
+}
+
+.guess--text {
+  text-align: center;
+  color: var(--color-text-1);
+  font-size: 7rem;
+  height: 35vw;
+  width: 70vw;
+  max-height: 350px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.message--text {
+  text-align: center;
+  color: var(--color-text-1);
+  font-size: 3rem;
+  height: 35vw;
+  width: 70vw;
+  max-height: 350px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hand {
+  position: absolute;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  transition: translate 2s;
+}

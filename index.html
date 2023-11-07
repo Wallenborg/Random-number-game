@@ -3,9 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <img id="hand" class="hand" src="img/hand100.svg" alt="hand" />
+    <div class="wrapper">
+      <header class="head">Number<br />Guessing<br />Game</header>
+
+      <div class="game-box">
+        <div class="game-box_inner-grid-box">
+          <!-- <div id="form"> -->
+          <div id="guess" class="guess--text"></div>
+          <div id="message" class="message--text"></div>
+          <!-- </div> -->
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="continer-num">
+        <button id="button1" class="num-box">1</button>
+        <button id="button2" class="num-box">2</button>
+        <button id="button3" class="num-box">3</button>
+        <button id="button4" class="num-box">4</button>
+        <button id="button5" class="num-box">5</button>
+        <button id="button6" class="num-box">6</button>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
