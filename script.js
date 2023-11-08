@@ -3,8 +3,12 @@
 function checkNumber(g, n) {
   if (g === n) {
     messageEl.innerHTML = "Good job you guessed right";
+    playAgainEL.innerHTML = "Play Again";
+    playAgainEL.classList.add("link--text");
   } else if (tryLeft === 0) {
     messageEl.innerHTML = "You Lost";
+    playAgainEL.innerHTML = "Play Again";
+    playAgainEL.classList.add("link--text");
   } else if (g < n) {
     messageEl.innerHTML = "Too Low!";
     tryLeft -= 1;
@@ -18,6 +22,7 @@ function checkNumber(g, n) {
 
 let messageEl = document.querySelector("#message");
 let guessEl = document.querySelector("#guess");
+let playAgainEL = document.querySelector("#playAgain");
 let tryLeft = 1;
 
 // get random number
@@ -87,7 +92,7 @@ document.addEventListener("click", function (e) {
   console.log(e.pageY);
   let handEl = document.querySelector("#hand");
 
-  handEl.style.translate = `${e.pageX - 30}px  ${e.pageY - 30}px`;
+  handEl.style.translate = `${e.pageX - 35}px  ${e.pageY - 750}px`;
 });
 
 // change nr in logo flag
