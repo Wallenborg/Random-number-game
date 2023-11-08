@@ -92,7 +92,7 @@ document.addEventListener("click", function (e) {
   console.log(e.pageY);
   let handEl = document.querySelector("#hand");
 
-  handEl.style.translate = `${e.pageX - 35}px  ${e.pageY - 750}px`;
+  handEl.style.translate = `${e.pageX - 35}px  ${e.pageY - 35}px`;
 });
 
 // change nr in logo flag

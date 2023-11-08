@@ -197,7 +197,6 @@ body {
 
 .hand {
   position: absolute;
-  bottom: 5px;
   pointer-events: none;
   z-index: 100;
   width: 100px;
