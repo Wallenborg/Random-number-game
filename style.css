@@ -54,12 +54,13 @@ body {
   min-width: 375px;
   max-width: 390px;
   height: 90vh;
-  min-height: 750px;
-  max-height: 780px;
+  min-height: 730px;
+  max-height: 790px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 5px;
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: auto;
