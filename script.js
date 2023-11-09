@@ -1,5 +1,25 @@
 "use strict";
 
+// ----------------
+// Variables
+// ----------------
+
+let messageEl = document.querySelector("#message");
+let guessEl = document.querySelector("#guess");
+let playAgainEL = document.querySelector("#playAgain");
+let lifeNumEl = document.querySelector("#lifeNum");
+let linkBoxEl = document.querySelector("#linkBox");
+
+let lifecounter = 2;
+let tryLeft = 1;
+
+lifeNumEl.innerHTML = lifecounter;
+
+console.log("life left", lifecounter);
+
+// ----------------
+// Logic
+// ----------------
 function checkNumberAndGuessesLeft(g, n) {
   if (g === n) {
     messageEl.innerHTML = "Good job you guessed right";
@@ -43,11 +63,9 @@ function addAnimation() {
   guessEl.classList.add("animation-guess");
 }
 
-let messageEl = document.querySelector("#message");
-let guessEl = document.querySelector("#guess");
-let playAgainEL = document.querySelector("#playAgain");
-let lifeNumEl = document.querySelector("#lifeNum");
-let linkBoxEl = document.querySelector("#linkBox");
+// ----------------
+// Event listeners
+// ----------------
 
 messageEl.addEventListener("animationend", () => {
   messageEl.classList.remove("animation-message");
@@ -61,18 +79,18 @@ linkBoxEl.addEventListener("animationend", () => {
   linkBoxEl.classList.remove("animation-link");
 });
 
-let lifecounter = 2;
-let tryLeft = 1;
-
-console.log("life left", lifecounter);
-
-lifeNumEl.innerHTML = lifecounter;
-
+// -----------------
 // get random number
+// -----------------
+
 let number = Math.floor(Math.random() * 6) + 1;
 
 console.log("Num", number);
 console.log("try left", tryLeft);
+
+// -----------------
+// All Buttons
+// -----------------
 
 let button1El = document.querySelector("#button1");
 button1El.addEventListener("click", function () {
@@ -139,8 +157,9 @@ button6El.addEventListener("click", function () {
   addAnimation();
   lifeCheck();
 });
-
+// -------------
 // Move object
+// -------------
 
 document.addEventListener("click", function (e) {
   console.log(e.pageX);
@@ -149,8 +168,9 @@ document.addEventListener("click", function (e) {
 
   handEl.style.translate = `${e.pageX - 30}px  ${e.pageY - 715}px`;
 });
-
+// ----------------------
 // change nr in logo flag
+// -----------------------
 
 let numberDisplayLogoEL = document.querySelector("#number-display-logo");
 
