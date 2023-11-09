@@ -13,6 +13,15 @@ let linkBoxEl = document.querySelector("#linkBox");
 let lifecounter = 2;
 let tryLeft = 1;
 
+// -----------------
+// get random number
+// -----------------
+
+let number = Math.floor(Math.random() * 6) + 1;
+
+console.log("Num", number);
+console.log("try left", tryLeft);
+
 lifeNumEl.innerHTML = lifecounter;
 
 console.log("life left", lifecounter);
@@ -53,9 +62,17 @@ function checkNumberAndGuessesLeft(g, n) {
   }
 }
 
+// function lifeCheck() {
+//   lifecounter -= 1;
+//   lifeNumEl.innerHTML = lifecounter;
+//   setTimeout(function () {}, 2000);
+// }
+
 function lifeCheck() {
-  lifecounter -= 1;
-  lifeNumEl.innerHTML = lifecounter;
+  setTimeout(function () {
+    lifecounter -= 1;
+    lifeNumEl.innerHTML = lifecounter;
+  }, 1000);
 }
 
 function addAnimation() {
@@ -78,15 +95,6 @@ guessEl.addEventListener("animationend", () => {
 linkBoxEl.addEventListener("animationend", () => {
   linkBoxEl.classList.remove("animation-link");
 });
-
-// -----------------
-// get random number
-// -----------------
-
-let number = Math.floor(Math.random() * 6) + 1;
-
-console.log("Num", number);
-console.log("try left", tryLeft);
 
 // -----------------
 // All Buttons
