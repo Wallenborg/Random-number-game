@@ -5,6 +5,7 @@ function checkNumberAndGuessesLeft(g, n) {
     messageEl.innerHTML = "Good job you guessed right";
     playAgainEL.innerHTML = "Play Again";
     playAgainEL.classList.add("link--text");
+    linkBoxEl.classList.add("animation-link");
     // eskil code
     let buttonEls = document.querySelectorAll(".num-box");
     for (let buttonEl of buttonEls) {
@@ -14,6 +15,7 @@ function checkNumberAndGuessesLeft(g, n) {
     messageEl.innerHTML = "You Lost";
     playAgainEL.innerHTML = "Play Again";
     playAgainEL.classList.add("link--text");
+    linkBoxEl.classList.add("animation-link");
     // eskil code
     let buttonEls = document.querySelectorAll(".num-box");
     for (let buttonEl of buttonEls) {
@@ -22,11 +24,11 @@ function checkNumberAndGuessesLeft(g, n) {
   } else if (g < n) {
     messageEl.innerHTML = "Too Low!";
     tryLeft -= 1;
-    console.log(tryLeft);
+    console.log("try left", tryLeft);
   } else if (g > n) {
     messageEl.innerHTML = "Too High!";
     tryLeft -= 1;
-    console.log(tryLeft);
+    console.log("try left", tryLeft);
   }
 }
 
@@ -35,30 +37,50 @@ function lifeCheck() {
   lifeNumEl.innerHTML = lifecounter;
 }
 
+function addAnimation() {
+  messageEl.classList.add("animation-message");
+  guessEl.classList.add("animation-guess");
+}
+
 let messageEl = document.querySelector("#message");
 let guessEl = document.querySelector("#guess");
 let playAgainEL = document.querySelector("#playAgain");
 let lifeNumEl = document.querySelector("#lifeNum");
+let linkBoxEl = document.querySelector("#linkBox");
+
+messageEl.addEventListener("animationend", () => {
+  messageEl.classList.remove("animation-message");
+});
+
+guessEl.addEventListener("animationend", () => {
+  guessEl.classList.remove("animation-guess");
+});
+
+linkBoxEl.addEventListener("animationend", () => {
+  linkBoxEl.classList.remove("animation-link");
+});
+
 let tryLeft = 1;
 let lifecounter = 2;
-console.log(lifecounter);
+console.log("life left", lifecounter);
 
 lifeNumEl.innerHTML = lifecounter;
 
 // get random number
 let number = Math.floor(Math.random() * 6) + 1;
 
-console.log(number);
-console.log(tryLeft);
+console.log("Num", number);
+console.log("try left", tryLeft);
 
 let button1El = document.querySelector("#button1");
 button1El.addEventListener("click", function () {
   guessEl.innerHTML = "1";
   let guess = 1;
-  console.log(guess);
-  console.log(tryLeft);
+  console.log("g", guess);
+  console.log("try left", tryLeft);
   checkNumberAndGuessesLeft(guess, number);
   lifeCheck();
+  addAnimation();
 });
 
 let button2El = document.querySelector("#button2");
@@ -66,49 +88,54 @@ button2El.addEventListener("click", function () {
   guessEl.innerHTML = "2";
   let guess = 2;
 
-  console.log(guess);
-  console.log(tryLeft);
+  console.log("g", guess);
+  console.log("try left", tryLeft);
   checkNumberAndGuessesLeft(guess, number);
   lifeCheck();
+  addAnimation();
 });
 let button3El = document.querySelector("#button3");
 button3El.addEventListener("click", function () {
   guessEl.innerHTML = "3";
   let guess = 3;
-  console.log(guess);
-  console.log(tryLeft);
+  console.log("g", guess);
+  console.log("try left", tryLeft);
 
   checkNumberAndGuessesLeft(guess, number);
   lifeCheck();
+  addAnimation();
 });
 let button4El = document.querySelector("#button4");
 button4El.addEventListener("click", function () {
   guessEl.innerHTML = "4";
   let guess = 4;
 
-  console.log(guess);
-  console.log(tryLeft);
+  console.log("g", guess);
+  console.log("try left", tryLeft);
 
   checkNumberAndGuessesLeft(guess, number);
   lifeCheck();
+  addAnimation();
 });
 let button5El = document.querySelector("#button5");
 button5El.addEventListener("click", function () {
   guessEl.innerHTML = "5";
   let guess = 5;
-  console.log(guess);
-  console.log(tryLeft);
+  console.log("g", guess);
+  console.log("try left", tryLeft);
   checkNumberAndGuessesLeft(guess, number);
   lifeCheck();
+  addAnimation();
 });
 let button6El = document.querySelector("#button6");
 button6El.addEventListener("click", function () {
   guessEl.innerHTML = "6";
   let guess = 6;
-  console.log(guess);
-  console.log(tryLeft);
+  console.log("g", guess);
+  console.log("try left", tryLeft);
   checkNumberAndGuessesLeft(guess, number);
   lifeCheck();
+  addAnimation();
 });
 
 // Move object

@@ -132,7 +132,7 @@ body {
   border-radius: 10px;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 20px;
 }
 
 .line {
@@ -171,10 +171,10 @@ body {
   align-self: center;
 }
 
-.num-box:disabled {
+/* .num-box:disabled {
   background-color: #262424;
   color: #262424;
-}
+} */
 
 .guess--text {
   text-align: center;
@@ -231,4 +231,31 @@ body {
   width: 100px;
   height: 100px;
   transition: translate 1s;
+}
+
+.animation-guess {
+  visibility: hidden;
+  animation: fade-in 1s forwards;
+  animation-delay: 0.5s;
+}
+.animation-message {
+  visibility: hidden;
+  animation: fade-in 2s forwards;
+  animation-delay: 1s;
+}
+
+.animation-link {
+  visibility: hidden;
+  animation: fade-in 2s forwards;
+  animation-delay: 2.5s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
