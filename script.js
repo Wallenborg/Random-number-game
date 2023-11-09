@@ -36,21 +36,23 @@ function checkNumberAndGuessesLeft(g, n) {
     playAgainEL.classList.add("link--text");
     linkBoxEl.classList.add("animation-link");
     lifecounter += 1;
-    // eskil code
     let buttonEls = document.querySelectorAll(".num-box");
-    for (let buttonEl of buttonEls) {
-      buttonEl.disabled = true;
-    }
+    setTimeout(function () {
+      for (let buttonEl of buttonEls) {
+        buttonEl.disabled = true;
+      }
+    }, 1600);
   } else if (tryLeft === 0) {
     messageEl.innerHTML = "You Lost";
     playAgainEL.innerHTML = "Play Again";
     playAgainEL.classList.add("link--text");
     linkBoxEl.classList.add("animation-link");
-    // eskil code
     let buttonEls = document.querySelectorAll(".num-box");
-    for (let buttonEl of buttonEls) {
-      buttonEl.disabled = true;
-    }
+    setTimeout(function () {
+      for (let buttonEl of buttonEls) {
+        buttonEl.disabled = true;
+      }
+    }, 1600);
   } else if (g < n) {
     messageEl.innerHTML = "Too Low!";
     tryLeft -= 1;
@@ -62,13 +64,8 @@ function checkNumberAndGuessesLeft(g, n) {
   }
 }
 
-// function lifeCheck() {
-//   lifecounter -= 1;
-//   lifeNumEl.innerHTML = lifecounter;
-//   setTimeout(function () {}, 2000);
-// }
-
 function lifeCheck() {
+  //a delay
   setTimeout(function () {
     lifecounter -= 1;
     lifeNumEl.innerHTML = lifecounter;
