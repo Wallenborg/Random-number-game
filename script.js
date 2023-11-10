@@ -77,6 +77,26 @@ function addAnimation() {
   guessEl.classList.add("animation-guess");
 }
 
+// -----------------
+// All Buttons
+// -----------------
+
+for (let i = 1; i <= 6; i++) {
+  let buttonEl = document.querySelector("#button" + i);
+
+  buttonEl.addEventListener("click", function () {
+    guessEl.innerHTML = i.toString();
+    let guess = i;
+
+    console.log("g", guess);
+    console.log("try left", tryLeft);
+
+    checkNumberAndGuessesLeft(guess, number);
+    addAnimation();
+    lifeCheck();
+  });
+}
+
 // ----------------
 // Event listeners
 // ----------------
@@ -93,75 +113,6 @@ linkBoxEl.addEventListener("animationend", () => {
   linkBoxEl.classList.remove("animation-link");
 });
 
-// -----------------
-// All Buttons
-// -----------------
-
-let button1El = document.querySelector("#button1");
-button1El.addEventListener("click", function () {
-  guessEl.innerHTML = "1";
-  let guess = 1;
-  console.log("g", guess);
-  console.log("try left", tryLeft);
-  checkNumberAndGuessesLeft(guess, number);
-  addAnimation();
-  lifeCheck();
-});
-
-let button2El = document.querySelector("#button2");
-button2El.addEventListener("click", function () {
-  guessEl.innerHTML = "2";
-  let guess = 2;
-
-  console.log("g", guess);
-  console.log("try left", tryLeft);
-  checkNumberAndGuessesLeft(guess, number);
-  addAnimation();
-  lifeCheck();
-});
-let button3El = document.querySelector("#button3");
-button3El.addEventListener("click", function () {
-  guessEl.innerHTML = "3";
-  let guess = 3;
-  console.log("g", guess);
-  console.log("try left", tryLeft);
-
-  checkNumberAndGuessesLeft(guess, number);
-  addAnimation();
-  lifeCheck();
-});
-let button4El = document.querySelector("#button4");
-button4El.addEventListener("click", function () {
-  guessEl.innerHTML = "4";
-  let guess = 4;
-
-  console.log("g", guess);
-  console.log("try left", tryLeft);
-
-  checkNumberAndGuessesLeft(guess, number);
-  addAnimation();
-  lifeCheck();
-});
-let button5El = document.querySelector("#button5");
-button5El.addEventListener("click", function () {
-  guessEl.innerHTML = "5";
-  let guess = 5;
-  console.log("g", guess);
-  console.log("try left", tryLeft);
-  checkNumberAndGuessesLeft(guess, number);
-  addAnimation();
-  lifeCheck();
-});
-let button6El = document.querySelector("#button6");
-button6El.addEventListener("click", function () {
-  guessEl.innerHTML = "6";
-  let guess = 6;
-  console.log("g", guess);
-  console.log("try left", tryLeft);
-  checkNumberAndGuessesLeft(guess, number);
-  addAnimation();
-  lifeCheck();
-});
 // -------------
 // Move object
 // -------------
